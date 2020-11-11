@@ -1,0 +1,26 @@
+{
+	"info" : {
+		"version" : "1.0",
+		"update" : "",
+		"update_log" : ""
+	},
+	"scripts" : {
+		"all" : [
+			{
+				"source" : "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js",
+				"tag" : "微博签到",
+				"enable" : "true"
+			},
+			{
+				"source" : "https://raw.githubusercontent.com/zZPiglet/Task/master/Naixue/Naixue.js",
+				"tag" : "奈雪签到",
+				"enable" : "true"
+			},
+			{
+				"source" : "https://raw.githubusercontent.com/NobyDa/Script/master/BDTieBa-DailyBonus/TieBa.js",
+				"tag" : "贴吧签到",
+				"enable" : "true"
+			}
+		]
+	}
+}
