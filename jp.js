@@ -29,11 +29,15 @@ const myRequest = {
 };
 
 $task.fetch(myRequest).then(response => {
-    console.log(response.statusCode + "\n\n" + response.body);
+    // console.log(response.statusCode + "\n\n" + response.body);
     data = JSON.parse(response.body)
+    num = data.context.goods.goodsEvaluateNum;
+    costPrice = data.context.goods.costPrice
     console.log("\n-----------\n")
+    console.log("当前查询到数量为:" + num)
     console.log(data);
     console.log("\n-----------\n")
+    $.msg($.name, "阿玛尼", "检测到有货，当前货物数量为:" + num + "\n" + "成本价格为:" + costPrice, "")
 }, reason => {
     console.log(reason.error);
 });
