@@ -4,6 +4,8 @@
  * 
  */
 
+const chavy = init()
+
 const url = `https://mbff.yuegowu.com/goods/goodsDetailSimple/2c919458759546e501759c6419665ba2?reqId=4afecd5d-83c4-49d5-9b51-7ac2219d3cab`;
 const method = `GET`;
 const headers = {
@@ -37,7 +39,7 @@ $task.fetch(myRequest).then(response => {
     console.log("当前查询到数量为:" + num)
     console.log(data);
     console.log("\n-----------\n")
-    $.msg($.name, "阿玛尼", "检测到有货，当前货物数量为:" + num + "\n" + "成本价格为:" + costPrice, "")
+    chavy.msg("阿玛尼监控", "有货了", "检测到有货，当前货物数量为:" + num + "\n" + "成本价格为:" + costPrice)
 }, reason => {
     console.log(reason.error);
 });
