@@ -34,10 +34,14 @@ $task.fetch(myRequest).then(response => {
     // console.log(response.statusCode + "\n\n" + response.body);
     data = JSON.parse(response.body)
     num = data.context.goods.goodsEvaluateNum;
+    console.log(data)
+    if (num <= 0) {
+        console.log("没有库存，不作任何处理")
+        return;
+    }
     costPrice = data.context.goods.costPrice
     console.log("\n-----------\n")
     console.log("当前查询到数量为:" + num)
-    console.log(data);
     console.log("\n-----------\n")
     chavy.msg("阿玛尼监控", "有货了", "检测到有货，当前货物数量为:" + num + "\n" + "成本价格为:" + costPrice)
 }, reason => {
